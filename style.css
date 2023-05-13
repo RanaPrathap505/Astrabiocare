@@ -1,0 +1,127 @@
+body {
+	background-color: #f2f2f2;
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: #280233;
+	color: white;
+	padding: 20px;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+nav li {
+	float: right;
+}
+
+nav li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	transition: background-color 0.3s ease;
+}
+
+nav li a:hover {
+	background-color: #2d862d;
+	color: white;
+}
+
+main {
+	margin: 20px;
+}
+
+section {
+	background-color: white;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+	color: #df102c;
+}
+
+h1 {
+	font-size: 36px;
+	margin: 0;
+}
+
+h2 {
+	font-size: 24px;
+	margin: 0 0 10px 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 10px;
+}
+
+a {
+	color: #07031d;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #d41f4b;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	color: #280233;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	resize: vertical;
+	color: #07031d;
+}
+
+input[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background-color: #2d862d;
+}
+
+footer {
+	background-color: #280233;
+	color: white;
+	padding: 20px;
+	text-align: center;
+}
+.header {
+	display: flex;
+	align-items: right;
+	justify-content: space-between;
+}
+
+.logo {
+	margin-left: auto;
+}
