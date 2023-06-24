@@ -110,17 +110,20 @@ input[type="submit"]:hover {
 	background-color: #2d862d;
 }
 
-img {
-	max-width: 90%;
-	height: auto;
+/* Adjust the size of product images in the main section */
+main img {
+	max-width: 1000px;
+	height: 350px;
 }
-/* Media query for mobile devices */
-@media only screen and (max-width: 600px) {
-	img {
+  
+/* Media query for mobile view */
+@media (max-width: 767px) {
+	main img {
 	  max-width: 100%;
 	  height: auto;
 	}
 }
+
 footer {
 	background-color: #280233;
 	color: white;
