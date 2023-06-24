@@ -110,9 +110,16 @@ input[type="submit"]:hover {
 	background-color: #2d862d;
 }
 
-li img {
-	width: 900px; /* Set the desired width */
-	height: 400px; /* Maintain aspect ratio */
+img {
+	max-width: 100%;
+	height: auto;
+}
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+	img {
+	  max-width: 100%;
+	  height: auto;
+	}
 }
 footer {
 	background-color: #280233;
