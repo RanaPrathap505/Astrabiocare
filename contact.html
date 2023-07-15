@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html lang="en"> 
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Astra Biocare Pvt Ltd - Contact Us</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-        .error {
+        .error, .success {
             color: red;
+            margin-top: 1em;
+            font-size: 1em;
+        }
+
+        .success {
+            color: green;
         }
     </style>
-    <script src="script.js"></script>
 </head>
 <body>
     <header>
-		<img src="img/company_logo.png" alt="Astra Biocare Pvt Ltd Logo">
-        <!-- <h1>Astra Biocare Pvt. Ltd.</h1> -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+		<div class="logo">
+			<img src="img/company_logo.png" alt="Logo of Astra Biocare Pvt Ltd">
+		</div>
+		<nav aria-label="Main Navigation">
+			<ul>
+				<li><a href="index.html" title="Home">Home</a></li>
+				<li><a href="products.html" title="Our products">Products</a></li>
+				<li><a href="about.html" title="About us">About Us</a></li>
+				<li><a href="contact.html" class="active">Contact Us</a></li>
+			</ul>
+		</nav>
+	</header>
     <main>
         <section>
             <h2>Contact Us</h2>
@@ -42,65 +47,14 @@
         </section>
     </main>
     <footer>
-        <h3>
-            <p>&copy; 2023 Astra Biocare Pvt. Ltd. All rights reserved.</p>
-        </h3>
-        <h4>
-            <address>
-                Registred Office: 
-                #16, 2nd cross, Aruna Building,
-                Somasundrapalya, Bangalore,
-                Karnataka - 560102.
-            </address>
-        </h4>	
-        </footer>
-    <script>
-        // Form submission
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', handleSubmit);
-
-        function handleSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-
-            // Perform form validation here
-            if (!name || !email || !message) {
-                displayErrorMessage('All fields are required.');
-                return;
-            }
-
-            // Perform form submission here
-            submitForm(name, email, message);
-        }
-
-        function submitForm(name, email, message) {
-            // Perform form submission, e.g., send data to server via AJAX
-
-            // Reset form after successful submission
-            form.reset();
-
-            // Display success message
-            displaySuccessMessage('Form submitted successfully!');
-        }
-
-        function displayErrorMessage(message) {
-            const errorElement = document.createElement('p');
-            errorElement.classList.add('error');
-            errorElement.textContent = message;
-
-            const formSection = document.querySelector('section');
-            formSection.appendChild(errorElement);
-        }
-
-        function displaySuccessMessage(message) {
-            const successElement = document.createElement('p');
-            successElement.textContent = message;
-
-            const formSection = document.querySelector('section');
-            formSection.appendChild(successElement);
-        }
-    </script>
+        <p>&copy; 2023 Astra Biocare Pvt. Ltd. All rights reserved.</p>
+        <address>
+            Registered Office:
+            #16, 2nd cross, Aruna Building,
+            Somasundrapalya, Bangalore,
+            Karnataka - 560102.
+        </address>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
