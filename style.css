@@ -1,39 +1,41 @@
+:root {
+	--primary-color: #280233;
+	--secondary-color: #f2f2f2;
+	--highlight-color: #df102c;
+	--link-color: #07031d;
+	--hover-color: #2d862d;
+	--background-color: #fff;
+}
+
 body {
-	background-color: #f2f2f2;
+	background-color: var(--secondary-color);
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
 header {
-	background-color: #280233;
-	color: white;
+	background-color: var(--primary-color);
+	color: var(--background-color);
 	padding: 20px;
 }
 
 nav ul {
-	list-style-type: none;
-	margin: 0;
+	list-style: none;
 	padding: 0;
-	overflow: hidden;
-}
-
-nav li {
-	float: right;
+	display: flex;
+	justify-content: flex-end;
 }
 
 nav li a {
-	display: block;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
+	color: var(--background-color);
 	text-decoration: none;
+	padding: 1em 1em;
 	transition: background-color 0.3s ease;
 }
 
 nav li a:hover {
-	background-color: #2d862d;
-	color: white;
+	background-color: var(--hover-color);
 }
 
 main {
@@ -41,7 +43,7 @@ main {
 }
 
 section {
-	background-color: white;
+	background-color: var(--background-color);
 	padding: 20px;
 	margin-bottom: 20px;
 	border-radius: 5px;
@@ -49,30 +51,20 @@ section {
 }
 
 h1, h2 {
-	color: #df102c;
+	color: var(--highlight-color);
 }
 
 h1 {
-	font-size: 36px;
-	margin: 0;
+	font-size: 2.25rem;
 }
 
 h2 {
-	font-size: 24px;
-	margin: 0 0 10px 0;
-}
-
-ul {
-	margin: 0;
-	padding: 0;
-}
-
-li {
+	font-size: 1.5rem;
 	margin-bottom: 10px;
 }
 
 a {
-	color: #07031d;
+	color: var(--link-color);
 	text-decoration: none;
 }
 
@@ -82,8 +74,8 @@ a:hover {
 
 label {
 	display: block;
-	margin-bottom: 5px;
-	color: #280233;
+	margin-bottom: .5em;
+	color: var(--primary-color);
 }
 
 input[type="text"],
@@ -93,29 +85,34 @@ textarea {
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	resize: vertical;
-	color: #07031d;
+	color: var(--link-color);
 }
 
 input[type="submit"] {
 	background-color: #4CAF50;
-	color: white;
-	padding: 10px 20px;
-	border: none;
+	color: var(--background-color);
+	padding: .625rem 1.25rem;
 	border-radius: 5px;
 	cursor: pointer;
 	transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-	background-color: #2d862d;
+	background-color: var(--hover-color);
+}
+
+main img {
+	max-width: 100%;
+	height: auto;
 }
 
 footer {
-	background-color: #280233;
-	color: white;
+	background-color: var(--primary-color);
+	color: var(--background-color);
 	padding: 20px;
 	text-align: center;
 }
+
 .header {
 	display: flex;
 	align-items: right;
