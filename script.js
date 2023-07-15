@@ -1,97 +1,85 @@
-// Get the modal
+// Modal functionality
 var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
+btn.addEventListener("click", function() {
+  modal.classList.add("show");
+});
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
+span.addEventListener("click", function() {
+  modal.classList.remove("show");
+});
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.addEventListener("click", function(event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    modal.classList.remove("show");
   }
-}
+});
 
-// Get the form
+// Form submission and list addition
 var form = document.getElementById("myForm");
-
-// When the user submits the form, add the input to the list
-form.onsubmit = function(event) {
+form.addEventListener("submit", function(event) {
   event.preventDefault();
   var input = document.getElementById("myInput").value;
   if (input.trim() !== "") {
     var li = document.createElement("li");
-    var text = document.createTextNode(input);
-    li.appendChild(text);
+    li.textContent = input;
     document.getElementById("myList").appendChild(li);
     document.getElementById("myInput").value = "";
   }
-}
+});
 
-// Get the button that toggles the theme
+// Theme toggle
 var themeBtn = document.getElementById("themeBtn");
-
-// When the user clicks on the button, toggle the theme
-themeBtn.onclick = function() {
-  var body = document.getElementsByTagName("body")[0];
+themeBtn.addEventListener("click", function() {
+  var body = document.body;
   body.classList.toggle("dark-theme");
-}
+  // Remember the user's theme preference
+  window.localStorage.setItem('theme', body.classList.contains("dark-theme") ? 'dark' : 'light');
+});
 
-// Form submission
+// Set theme from local storage
+window.onload = function() {
+  var theme = window.localStorage.getItem('theme');
+  if (theme === 'dark') document.body.classList.add('dark-theme');
+};
+
+// Contact form submission
 var contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', handleSubmit);
-
-function handleSubmit(event) {
+contactForm.addEventListener('submit', function(event) {
   event.preventDefault();
+
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
   var message = document.getElementById('message').value;
 
-  // Perform form validation here
   if (!name || !email || !message) {
-    displayErrorMessage('All fields are required.');
-    return;
+    displayFeedback('All fields are required.', 'error');
+  } else {
+    submitForm(name, email, message);
+    contactForm.reset();
+    displayFeedback('Form submitted successfully!', 'success');
   }
+});
 
-  // Perform form submission here
-  submitForm(name, email, message);
+// Helper function to display feedback
+function displayFeedback(message, type) {
+  var feedbackElement = document.createElement('p');
+  feedbackElement.classList.add(type);
+  feedbackElement.textContent = message;
+
+  var formSection = document.querySelector('section');
+  formSection.appendChild(feedbackElement);
+
+  // Remove feedback message after 5 seconds
+  setTimeout(function() {
+    formSection.removeChild(feedbackElement);
+  }, 5000);
 }
 
+// Mock form submission
 function submitForm(name, email, message) {
+  console.log('Form submitted with:', name, email, message);
   // Perform form submission, e.g., send data to server via AJAX
-
-  // Reset form after successful submission
-  contactForm.reset();
-
-  // Display success message
-  displaySuccessMessage('Form submitted successfully!');
-}
-
-function displayErrorMessage(message) {
-  var errorElement = document.createElement('p');
-  errorElement.classList.add('error');
-  errorElement.textContent = message;
-
-  var formSection = document.querySelector('section');
-  formSection.appendChild(errorElement);
-}
-
-function displaySuccessMessage(message) {
-  var successElement = document.createElement('p');
-  successElement.textContent = message;
-
-  var formSection = document.querySelector('section');
-  formSection.appendChild(successElement);
 }
