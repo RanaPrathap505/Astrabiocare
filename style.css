@@ -104,6 +104,9 @@ input[type="submit"]:hover {
 main img {
 	max-width: 100%;
 	height: auto;
+	object-fit: cover; /* This will ensure the image covers the whole area of its container. */
+	border: 2px solid black; /* This will add a 2px wide black border around your image. */
+	border-radius: 10px; /* This will add rounded corners to your image. */
 }
 
 footer {
