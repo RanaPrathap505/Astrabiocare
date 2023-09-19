@@ -1,141 +1,142 @@
+/* Root Variables */
 :root {
-	--primary-color: #280233;
-	--secondary-color: #f2f2f2;
-	--highlight-color: #df102c;
-	--link-color: #07031d;
-	--hover-color: #2d862d;
-	--background-color: #fff;
+    --primary-color: #c180d3;
+    --secondary-color: #e0dada;
+    --highlight-color: #760e38;
+    --link-color: #271399;
+    --hover-color: #b9642f;
+    --background-color: #e8e3e3f6;
 }
 
+/* Global Styles */
 body {
-	background-color: var(--secondary-color);
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-}
-
-header {
-	background-color: var(--primary-color);
-	color: var(--background-color);
-	padding: 20px;
-}
-
-nav ul {
-	list-style: none;
-	padding: 0;
-	display: flex;
-	justify-content: flex-end;
-}
-
-nav li a {
-	color: var(--background-color);
-	text-decoration: none;
-	padding: 1em 1em;
-	transition: background-color 0.3s ease;
-}
-
-nav li a:hover {
-	background-color: var(--hover-color);
-}
-
-main {
-	margin: 20px;
-}
-
-section {
-	background-color: var(--background-color);
-	padding: 20px;
-	margin-bottom: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-h1, h2 {
-	color: var(--highlight-color);
-}
-
-h1 {
-	font-size: 2.25rem;
-}
-
-h2 {
-	font-size: 1.5rem;
-	margin-bottom: 10px;
+    background-color: var(--secondary-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 a {
-	color: var(--link-color);
-	text-decoration: none;
+    color: var(--link-color);
+    text-decoration: none;
 }
 
 a:hover {
-	color: #d41f4b;
+    color: #040002;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: right;
+    justify-content: space-between;
+}
+
+.logo {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li a {
+    color: var(--background-color);
+    text-decoration: none;
+    padding: 1em 1em;
+    transition: background-color 0.3s ease;
+}
+
+nav li a:hover {
+    background-color: var(--hover-color);
+}
+
+/* Main Content Styles */
+main {
+    margin: 20px;
+}
+
+article {
+    background-color: var(--background-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    color: var(--highlight-color);
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 label {
-	display: block;
-	margin-bottom: .5em;
-	color: var(--primary-color);
+    display: block;
+    margin-bottom: .5em;
+    color: var(--primary-color);
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	resize: vertical;
-	color: var(--link-color);
+input[type="text"], input[type="email"], textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    color: var(--link-color);
 }
 
 input[type="submit"] {
-	background-color: #4CAF50;
-	color: var(--background-color);
-	padding: .625rem 1.25rem;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
+    background-color: #4CAF50;
+    color: var(--background-color);
+    padding: .625rem 1.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
-	background-color: var(--hover-color);
+    background-color: var(--hover-color);
 }
 
 main img {
-	max-width: 100%;
-	height: auto;
-	object-fit: cover; /* This will ensure the image covers the whole area of its container. */
-	border: 2px solid black; /* This will add a 2px wide black border around your image. */
-	border-radius: 10px; /* This will add rounded corners to your image. */
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 2px solid black;
+    border-radius: 10px;
 }
-
-/* Adjust the size of product images in the main section */
 main img {
 	max-width: 1000px;
 	height: 350px;
 }
-  
-/* Media query for mobile view */
+
+/* Media Queries for Responsiveness */
 @media (max-width: 767px) {
-	main img {
-	  max-width: 100%;
-	  height: auto;
-	}
+    main img {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
+/* Footer Styles */
 footer {
-	background-color: var(--primary-color);
-	color: var(--background-color);
-	padding: 20px;
-	text-align: center;
-}
-
-.header {
-	display: flex;
-	align-items: right;
-	justify-content: space-between;
-}
-
-.logo {
-	margin-left: auto;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 20px;
+    text-align: center;
 }
